@@ -36,7 +36,7 @@ _gp()
         [[ ${i:1:1} == ' ' ]] || d=1
         [[ ${i:0:1} == [' ?'] ]] || s=1
     done < <(git status --porcelain 2>/dev/null)
-    printf ' git:(\001\e[35m\002%s\001\e[0m\002)' "$b"
+    printf ' git:(\001\e[1;35m\002%s\001\e[0m\002)' "$b"
     ((d)) && printf ' \001\e[31m\002*\001\e[0m\002'
     ((s)) && printf ' \001\e[32m\002+\001\e[0m\002'
 }
